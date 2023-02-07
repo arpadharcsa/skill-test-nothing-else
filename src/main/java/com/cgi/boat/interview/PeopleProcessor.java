@@ -1,5 +1,6 @@
 package com.cgi.boat.interview;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +20,7 @@ class PeopleProcessor {
      */
     static Map<String, List<String>> lastnamesByFirstname(List<Person> people){
         //TODO: implement
+        return Collections.emptyMap();
     }
 
 
@@ -36,6 +38,7 @@ class PeopleProcessor {
      */
     static Map<String, List<String>> firstnamesByLastname(List<Person> people){
         //TODO: implement
+        return Collections.emptyMap();
     }
 
 }
