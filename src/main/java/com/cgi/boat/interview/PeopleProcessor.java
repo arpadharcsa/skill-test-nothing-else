@@ -40,5 +40,7 @@ class PeopleProcessor {
         //TODO: implement
         return Collections.emptyMap();
     }
-
+    private PeopleProcessor() {
+        throw new IllegalStateException("Utility class");
+    }
 }
