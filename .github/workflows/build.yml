@@ -33,3 +33,7 @@ jobs:
       run: mvn -B clean verify -DskipTests
     - name: Compile application
       run: mvn -B clean package -DskipTests -DskipITs
+    - uses: actions/upload-artifact@v3
+      with:
+        name: application
+        path: target/*.jar
