@@ -106,7 +106,7 @@ class PeopleProcessorTest {
                         .collect(Collectors.toList()));
 
         //when
-        final Map<String, List<String>> result = PeopleProcessor.lastnamesByFirstname(testData);
+        final Map<String, List<String>> result = PeopleProcessor.firstnamesByLastname(testData);
 
         //then
         Assertions.assertThat(result.keySet())
