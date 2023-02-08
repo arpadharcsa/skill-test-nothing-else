@@ -16,7 +16,7 @@ public class Main {
         final Map<String, List<String>> lastByFirst = PeopleProcessor.lastnamesByFirstname(PeopleSetup.people);
 
         LOGGER.info("determine results");
-        analyser.determineTopThreeMostCommonFirstName(firstByLast)
+        analyser.findTopFirstNameByOccourence(firstByLast)
                 .forEach(s->LOGGER.info(s.toString()));
     }
 
