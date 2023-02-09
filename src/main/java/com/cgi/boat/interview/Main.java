@@ -11,19 +11,15 @@ public class Main {
     private static final PeopleDataAnalyser analyser = new PeopleDataAnalyser();
 
     public static void main(String[] args) {
-        LOGGER.info("initializing datasets");
-        final Map<String, List<String>> firstByLast = PeopleProcessor.firstnamesByLastname(PeopleSetup.people);
-        final Map<String, List<String>> lastByFirst = PeopleProcessor.lastnamesByFirstname(PeopleSetup.people);
+        final boolean optionalArgumentsPresent = args.length > 1;
+        final String inputType = optionalArgumentsPresent ? args[0] : PeopleSetupFactory.DEFAULT;
+        final String input = optionalArgumentsPresent ? args[1] : "";
 
-        LOGGER.info("determine results");
-        analyser.findTopFirstNameByOccourence(firstByLast)
-                .forEach(s->LOGGER.info(s.toString()));
+        final List<Person> people = PeopleSetupFactory.create(inputType, input).load();
+
+        final Map<String, List<String>> lastByFirst = PeopleProcessor.lastnamesByFirstname(people);
+
+        analyser.findTopFirstNameByOccourence(lastByFirst)
+                .forEach(s -> LOGGER.info(s.toString()));
     }
-
-
-
-
-
-
-
 }

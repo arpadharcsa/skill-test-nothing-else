@@ -30,7 +30,7 @@ jobs:
     - name: Run unittests
       run: mvn -B clean test      
     - name: Run integration test
-      run: mvn -B clean verify -DskipTests
+      run: mvn -B clean verify
     - name: Compile application
       run: mvn -B clean package -DskipTests -DskipITs
     - uses: actions/upload-artifact@v3

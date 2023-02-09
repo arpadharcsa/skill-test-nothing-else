@@ -1,0 +1,10 @@
+<configuration>
+    <appender name="STDOUT" class="com.cgi.boat.interview.LogCollectorLogbackAppender">
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

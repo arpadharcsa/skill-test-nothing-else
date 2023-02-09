@@ -3,7 +3,7 @@ package com.cgi.boat.interview;
 import java.util.Objects;
 
 class NameStatistic implements Comparable<NameStatistic> {
-    private static final String FIRSTNAME_STATISTIC_PRINTABLE_FORMAT = "%s: %d";
+    private static final String FIRSTNAME_STATISTIC_PRINTABLE_FORMAT = "%s:%d";
     private final String name;
     private final long occurency;
 
@@ -45,7 +45,7 @@ class NameStatistic implements Comparable<NameStatistic> {
         if (comparationResultByOccurence != 0) {
             return comparationResultByOccurence;
         }
-        
+
         return String.CASE_INSENSITIVE_ORDER.compare(name, that.name);
     }
 }
