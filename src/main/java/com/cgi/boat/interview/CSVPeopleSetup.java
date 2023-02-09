@@ -1,6 +1,7 @@
 package com.cgi.boat.interview;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 class CSVPeopleSetup implements PeopleSetup {
@@ -9,7 +10,7 @@ class CSVPeopleSetup implements PeopleSetup {
     CSVPeopleSetup(String csvData) {
         persons = Optional.ofNullable(csvData)
                 .map(PersonSerializer::deserialize)
-                .orElseThrow();
+                .orElseThrow(NoSuchElementException::new);
     }
 
     @Override
