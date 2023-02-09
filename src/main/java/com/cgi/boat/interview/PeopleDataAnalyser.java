@@ -10,7 +10,7 @@ public class PeopleDataAnalyser {
     private static final int TO_FIXED_VALUE = 3;
     private static final NameStatisticMapper TO_NAME_STATISTIC = new NameStatisticMapper();
 
-    public List<NameStatistic> findTopFirstNameByOccourence(Map<String, List<String>> firstNamesByLastNames) {
+    static List<NameStatistic> findTopFirstNameByOccourence(Map<String, List<String>> firstNamesByLastNames) {
         return firstNamesByLastNames.entrySet()
                 .stream()
                 .map(TO_NAME_STATISTIC)

@@ -1,24 +1,31 @@
 package com.cgi.boat.interview;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 class PersonSerializer {
+
+    public static final String SERIALIZATION_FORMAT = "%s,%s";
+    private static final String SEPARATOR = ",";
+    private static final String LINE_BREAK = "\n";
+
     static String serialize(List<Person> persons) {
         return persons.stream()
-                .map(p -> String.format("%s,%s", p.getFirstName(), p.getLastName()))
+                .map(p -> String.format(SERIALIZATION_FORMAT, p.getFirstName(), p.getLastName()))
                 .collect(Collectors.joining("\n"));
     }
 
     static List<Person> deserialize(String csv) {
-        return Arrays.stream(csv.split("\n"))
+        return Arrays.stream(csv.split(LINE_BREAK))
                 .map(line -> {
-                    String[] props = line.split(",");
+                    String[] props = line.split(SEPARATOR);
                     return new Person(props[0], props[1]);
                 }).collect(Collectors.toList());
     }
-    private PersonSerializer(){
+
+    private PersonSerializer() {
         throw new IllegalStateException();
     }
 }

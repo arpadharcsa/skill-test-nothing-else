@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 
 public class Main {
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
-    private static final PeopleDataAnalyser analyser = new PeopleDataAnalyser();
 
     public static void main(String[] args) {
         final boolean optionalArgumentsPresent = args.length > 1;
@@ -19,7 +18,7 @@ public class Main {
 
         final Map<String, List<String>> lastByFirst = PeopleProcessor.lastnamesByFirstname(people);
 
-        analyser.findTopFirstNameByOccourence(lastByFirst)
+        PeopleDataAnalyser.findTopFirstNameByOccourence(lastByFirst)
                 .forEach(s -> LOGGER.info(s.toString()));
     }
 }
