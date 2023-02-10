@@ -36,5 +36,6 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: application
-        path: target/*jar-with-dependencies.jar
-              target/site/
+        path: |
+          target/*jar-with-dependencies.jar
+          target/site/
