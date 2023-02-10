@@ -2,7 +2,7 @@ package com.cgi.boat.interview;
 
 import java.util.Optional;
 
-class PeopleSetupFactory {
+final class PeopleSetupFactory {
     static final String DEFAULT = "default";
     static final String CSV = "csv";
 

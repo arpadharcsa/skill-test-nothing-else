@@ -6,13 +6,15 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Main {
+public final class Main {
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         final boolean optionalArgumentsPresent = args.length > 1;
-        final String inputType = optionalArgumentsPresent ? args[0] : PeopleSetupFactory.DEFAULT;
-        final String input = optionalArgumentsPresent ? args[1] : "";
+        final String inputType = optionalArgumentsPresent ? args[0]
+                                                          : PeopleSetupFactory.DEFAULT;
+        final String input = optionalArgumentsPresent ? args[1]
+                                                      : "";
 
         final List<Person> people = PeopleSetupFactory.create(inputType, input).load();
 
@@ -20,5 +22,9 @@ public class Main {
 
         PeopleDataAnalyser.findTopFirstNameByOccourence(lastByFirst)
                 .forEach(s -> LOGGER.info(s.toString()));
+    }
+
+    private Main() {
+        throw new IllegalStateException();
     }
 }

@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-class PeopleProcessor {
+final class PeopleProcessor {
 
     private static final Collector<Person, ?, Map<String, List<String>>> COLLECT_LAST_NAMES_BASED_ON_FIRST_NAMES = Collectors.groupingBy(
             Person::getFirstName,
@@ -34,7 +34,7 @@ class PeopleProcessor {
      * <p>
      * Example: For input: ["John Doe", "John Silver", "Peter Doe"] Expected result would be: { "Doe" -> ["John", "Peter"] "Silver" -> ["John"]
      */
-    static Map<String, List<String>> firstnamesByLastname(List<Person> people) {
+    static Map<String, List<String>> firstnamesByLastname(final List<Person> people) {
         return Collections.unmodifiableMap(
                 people.stream().collect(COLLECT_FIRST_NAMES_BASED_ON_LAST_NAMES)
         );

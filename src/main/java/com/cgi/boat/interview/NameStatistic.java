@@ -2,17 +2,17 @@ package com.cgi.boat.interview;
 
 import java.util.Objects;
 
-class NameStatistic implements Comparable<NameStatistic> {
+final class NameStatistic implements Comparable<NameStatistic> {
     private static final String FIRSTNAME_STATISTIC_PRINTABLE_FORMAT = "%s:%d";
     private final String name;
     private final long occurency;
 
-    static NameStatistic from(String name, long occurency) {
-        return new NameStatistic(name, occurency);
+    static NameStatistic from(final String firstname, final long occurency) {
+        return new NameStatistic(firstname, occurency);
     }
 
-    NameStatistic(String name, long occurency) {
-        this.name = name;
+    NameStatistic(final String firstname, final long occurency) {
+        this.name = firstname;
         this.occurency = occurency;
     }
 
@@ -22,7 +22,7 @@ class NameStatistic implements Comparable<NameStatistic> {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) {
             return true;
         }
@@ -39,7 +39,7 @@ class NameStatistic implements Comparable<NameStatistic> {
     }
 
     @Override
-    public int compareTo(NameStatistic that) {
+    public int compareTo(final NameStatistic that) {
         final int comparationResultByOccurence = Long.compare(that.occurency, occurency);
 
         if (comparationResultByOccurence != 0) {

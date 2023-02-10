@@ -7,9 +7,9 @@ class Person {
     private final String firstName;
     private final String lastName;
 
-    Person(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    Person(final String firstname, final String lastname) {
+        this.firstName = firstname;
+        this.lastName = lastname;
     }
 
     String getFirstName() {
@@ -21,7 +21,7 @@ class Person {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) {
             return true;
         }
@@ -29,7 +29,8 @@ class Person {
             return false;
         }
         Person person = (Person) o;
-        return Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName);
+        return Objects.equals(firstName, person.firstName)
+               && Objects.equals(lastName, person.lastName);
     }
 
     @Override

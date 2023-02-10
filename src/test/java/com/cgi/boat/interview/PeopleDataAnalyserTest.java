@@ -11,8 +11,6 @@ import org.junit.jupiter.api.Test;
 
 class PeopleDataAnalyserTest {
 
-    private static final PeopleDataAnalyser ANALYSER = new PeopleDataAnalyser();
-
     @Test
     @DisplayName("Determine the top 3 first names based on their occurencies")
     void determineTopThreeMostCommonFirstName() {
@@ -24,7 +22,7 @@ class PeopleDataAnalyserTest {
         firstNamesByLastNames.put("Clive", Arrays.asList("Carter"));
 
         //when
-        final List<NameStatistic> result = ANALYSER.findTopFirstNameByOccourence(firstNamesByLastNames);
+        final List<NameStatistic> result = PeopleDataAnalyser.findTopFirstNameByOccourence(firstNamesByLastNames);
 
         //then
         Assertions.assertThat(result)

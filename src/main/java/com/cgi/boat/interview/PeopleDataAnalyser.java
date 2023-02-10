@@ -5,12 +5,12 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class PeopleDataAnalyser {
+final class PeopleDataAnalyser {
 
     private static final int TO_FIXED_VALUE = 3;
     private static final NameStatisticMapper TO_NAME_STATISTIC = new NameStatisticMapper();
 
-    static List<NameStatistic> findTopFirstNameByOccourence(Map<String, List<String>> lastByFirst) {
+    static List<NameStatistic> findTopFirstNameByOccourence(final Map<String, List<String>> lastByFirst) {
         return lastByFirst.entrySet()
                 .stream()
                 .map(TO_NAME_STATISTIC)
@@ -22,8 +22,12 @@ public class PeopleDataAnalyser {
     private static class NameStatisticMapper implements Function<Map.Entry<String, List<String>>, NameStatistic> {
 
         @Override
-        public NameStatistic apply(Map.Entry<String, List<String>> entry) {
+        public NameStatistic apply(final Map.Entry<String, List<String>> entry) {
             return NameStatistic.from(entry.getKey(), entry.getValue().size());
         }
+    }
+
+    private PeopleDataAnalyser() {
+        throw new IllegalStateException();
     }
 }

@@ -4,19 +4,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class PersonSerializer {
+final class PersonSerializer {
 
     private static final String SERIALIZATION_FORMAT = "%s,%s";
     private static final String SEPARATOR = ",";
     private static final String LINE_BREAK = "\n";
 
-    static String serialize(List<Person> persons) {
+    static String serialize(final List<Person> persons) {
         return persons.stream()
                 .map(p -> String.format(SERIALIZATION_FORMAT, p.getFirstName(), p.getLastName()))
                 .collect(Collectors.joining("\n"));
     }
 
-    static List<Person> deserialize(String csv) {
+    static List<Person> deserialize(final String csv) {
         return Arrays.stream(csv.split(LINE_BREAK))
                 .map(line -> {
                     String[] props = line.split(SEPARATOR);

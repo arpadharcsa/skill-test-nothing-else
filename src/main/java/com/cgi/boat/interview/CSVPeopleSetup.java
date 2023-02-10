@@ -7,7 +7,7 @@ import java.util.Optional;
 class CSVPeopleSetup implements PeopleSetup {
     private List<Person> persons;
 
-    CSVPeopleSetup(String csvData) {
+    CSVPeopleSetup(final String csvData) {
         persons = Optional.ofNullable(csvData)
                 .map(PersonSerializer::deserialize)
                 .orElseThrow(NoSuchElementException::new);

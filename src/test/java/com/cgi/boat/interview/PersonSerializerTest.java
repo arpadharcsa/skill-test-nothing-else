@@ -1,13 +1,10 @@
 package com.cgi.boat.interview;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PersonSerializerTest {
 
