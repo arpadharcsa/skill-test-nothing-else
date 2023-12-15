@@ -31,7 +31,7 @@
 
         <!-- logging dependencies -->
         <slf4j-api.version>2.0.6</slf4j-api.version>
-        <logback-core.version>1.4.5</logback-core.version>
+        <logback-core.version>1.4.12</logback-core.version>
         <assertj-core.version>3.24.2</assertj-core.version>
 
         <!--reporting-->
